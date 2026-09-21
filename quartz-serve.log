@@ -174,3 +174,89 @@ hint: exit with ctrl+c
 [200] /attachments/friedrich-monk.jpg
 [200] /
 [302] /subjects -> /subjects/
+Detected a source code change, doing a hard rebuild...
+X [ERROR] Expected string in JSON but found "<<"
+
+    package.json:22:0:
+      22 │ <<<<<<< HEAD
+         ╵ ~~
+
+X [ERROR] Unexpected "<<"
+
+    quartz.ts:2:0:
+      2 │ <<<<<<< HEAD
+        ╵ ~~
+
+X [ERROR] Expected identifier but found "<"
+
+    quartz/components/Head.tsx:93:1:
+      93 │ <<<<<<< HEAD
+         ╵  ^
+
+X [ERROR] expected "{".
+    ╷
+557 │ >>>>>>> c9db10da6613e6ee601fd40453b4bf80edb8ffc7
+    │                                                 ^
+    ╵
+  - 557:49  root stylesheet [plugin sass-plugin]
+
+    quartz/plugins/emitters/componentResources.ts:10:25:
+      10 │ import customStyles from "../../styles/custom.scss"
+         ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+X [ERROR] Expected string in JSON but found "<<"
+
+    package.json:22:0:
+      22 │ X [ERROR] Expected string in JSON but found "<<"
+
+    package.json:22:0:
+      22 │ <<<<<<< HEAD
+         ╵ ~~<<<<<<< HEAD
+         ╵ ~~
+
+
+
+X [ERROR] Build failed with 1 error:
+package.json:22:0: ERROR: Expected string in JSON but found "<<" [plugin inline-script-loader]
+
+    quartz/plugins/emitters/componentResources.ts:8:26:
+      8 │ import popoverScript from "../../components/scripts/popover.inline"
+        ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  This error came from the "onLoad" callback registered here:
+
+    node_modules/esbuild/lib/main.js:1422:20:
+      1422 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///C:/Users/rohan/Downloads/personal-blog-5/personal-blog-5/quartz/cli/handlers.js:367:17)
+    at handlePlugins (C:\Users\rohan\Downloads\personal-blog-5\personal-blog-5\node_modules\esbuild\lib\main.js:1422:21)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+X [ERROR] Build failed with 1 error:
+package.json:22:0: ERROR: Expected string in JSON but found "<<" [plugin inline-script-loader]
+
+    quartz/plugins/emitters/componentResources.ts:6:28:
+      6 │ import spaRouterScript from "../../components/scripts/spa.inline"
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  This error came from the "onLoad" callback registered here:
+
+    node_modules/esbuild/lib/main.js:1422:20:
+      1422 │       let promise = setup({
+           ╵                     ^
+
+    at setup (file:///C:/Users/rohan/Downloads/personal-blog-5/personal-blog-5/quartz/cli/handlers.js:367:17)
+    at handlePlugins (C:\Users\rohan\Downloads\personal-blog-5\personal-blog-5\node_modules\esbuild\lib\main.js:1422:21)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Failed to build Quartz. Check for syntax errors in your configuration or plugins.
+Reason: Build failed with 6 errors:
+package.json:22:0: ERROR: Expected string in JSON but found "<<"
+quartz.ts:2:0: ERROR: Unexpected "<<"
+quartz/components/Head.tsx:93:1: ERROR: Expected identifier but found "<"
+quartz/plugins/emitters/componentResources.ts:6:28: ERROR: [plugin: inline-script-loader] Build failed with 1 error:
+package.json:22:0: ERROR: Expected string in JSON but found "<<"
+quartz/plugins/emitters/componentResources.ts:8:26: ERROR: [plugin: inline-script-loader] Build failed with 1 error:
+package.json:22:0: ERROR: Expected string in JSON but found "<<"
+...

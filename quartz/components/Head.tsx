@@ -90,7 +90,6 @@ export default (() => {
         )}
 
         <link rel="icon" href={iconPath} />
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="/index.xml" />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
