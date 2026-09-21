@@ -40,13 +40,13 @@ jobs:
       - run: npm install
 
       - name: Install Quartz plugins
-        run: npx quartz plugin install
+        run: node ./quartz/bootstrap-cli.mjs plugin install
 
       - name: Link local plugins
         run: node scripts/link-local-plugins.cjs
 
       - name: Build
-        run: npx quartz build -v
+        run: node ./quartz/bootstrap-cli.mjs build -v
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
